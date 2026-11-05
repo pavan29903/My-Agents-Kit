@@ -1,0 +1,5 @@
+{
+  "block_ai_attribution": true,
+  "rules": [],
+  "_help": "Identity rules: commits/pushes are blocked when a repo matching a rule is configured with a different git identity. Put your real rules in ~/.my-agent-kit/identity.json (never committed). Rule shape: {\"remote_pattern\": \"github\\.com[:/]<user>/\", \"path_prefix\": \"D:/personal\", \"name\": \"<user>\", \"email\": \"<email>\"}"
+}

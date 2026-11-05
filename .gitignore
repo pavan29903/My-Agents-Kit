@@ -1,0 +1,6 @@
+.upstream/
+__pycache__/
+*.pyc
+.agent-state/
+.venv/
+*.log

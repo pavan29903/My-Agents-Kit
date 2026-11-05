@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-cli-design": {
+      "source": "agents-toolkit",
+      "path": "skills/agent-cli-design",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "e1e875f5d5de6e5cde06deed4a5c89439adf1a75d4f6bedeb0e404f8ce9e53ae"
+      }
+    },
+    "decision-lens": {
+      "source": "agents-toolkit",
+      "path": "skills/decision-lens",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "ada14f0a212b6112e54aeba8d7bf16a517ed74b32df169eda824158e88ca0538"
+      }
+    },
+    "delivery-review": {
+      "source": "agents-toolkit",
+      "path": "skills/delivery-review",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "98817fd8910eb0f9c6d41f9f45ecb8c71b9465ed0eae9d8b83193f499f92087b"
+      }
+    },
+    "deployment-preflight": {
+      "source": "agents-toolkit",
+      "path": "skills/deployment-preflight",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "46e84015e324a27cda7aa51b7c63d55559bf649933131f61d54b1225700f2c96"
+      }
+    },
+    "investigative-analysis": {
+      "source": "agents-toolkit",
+      "path": "skills/investigative-analysis",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "ca583709326e4c0f335482ca04452587a4f295893f05a745d1271463d737d215"
+      }
+    },
+    "playwright-verification": {
+      "source": "agents-toolkit",
+      "path": "skills/playwright-verification",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "631ffda4b6adaf26c2e42cd9efa4407c356205f372f1195f6fca593e7a62e5b9",
+        "scripts/fixture_broken.html": "6d3231e71088693317e2a585db9b477bd5322e1dc2279dbd67182c8ad343d23f",
+        "scripts/verify_page.py": "e99ab92b21f03591b001b87c7322b9ff4ecc47e71b31b82e8a57df57d285b3fd"
+      }
+    },
+    "ponytail": {
+      "source": "agents-toolkit",
+      "path": "skills/ponytail",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "e7baf8e0fea6930368d0c37fcc1b8a0bfd36549234d8ebc38c6f7119fb0788d2"
+      }
+    },
+    "project-checkpoint": {
+      "source": "agents-toolkit",
+      "path": "skills/project-checkpoint",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "19ca2475ed3f66412d290ac3efe4397dde34223c6488501210b8008d4401f6ca"
+      }
+    },
+    "requirement-reconciliation": {
+      "source": "agents-toolkit",
+      "path": "skills/requirement-reconciliation",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "adb7958a56775151ef544f9fd5053b93aa94472bd8b4c94594c5a8a2a9dafd64"
+      }
+    },
+    "security-audit": {
+      "source": "agents-toolkit",
+      "path": "skills/security-audit",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "8ed54695b29ec33c7d538a01f2135496c2ed314eec95443becc8c7873c2f12d8"
+      }
+    },
+    "session-preflight": {
+      "source": "agents-toolkit",
+      "path": "skills/session-preflight",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "ddfb10fe283fc8e78fdd68a9f8eba401d17f1c2413d8a31747a40bb585cfee89"
+      }
+    },
+    "transcript-to-todo": {
+      "source": "agents-toolkit",
+      "path": "skills/transcript-to-todo",
+      "commit": "0c50ee5d8625ea597dfddf0d5d5bb926c371ec13",
+      "files": {
+        "SKILL.md": "006d983a560a0859a4e9427a57dd2f386178eb9c1eaa748cd68c761ce2681da1",
+        "agents/openai.yaml": "656b61319b204404aa15a04fff689f112990787d509ac28532143a5a4956e545",
+        "assets/todo-template.md": "4af3d76e9998e22db0b3ad730fa2a315ae96c817948942198f38b89b30b45ddb"
+      }
+    }
+  }
+}

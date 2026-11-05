@@ -1,0 +1,29 @@
+{
+  "gate": {
+    "gate": true,
+    "format": true,
+    "test_timeout": 300,
+    "docs_min_files": 3,
+    "max_gate_blocks": 2
+  },
+  "projects": {},
+  "jobs": {
+    "roots": [],
+    "exclude": [
+      "node_modules",
+      "__pycache__"
+    ],
+    "morning_brief": {
+      "time": "09:00",
+      "since_hours": 24
+    },
+    "nightly_audit": {
+      "time": "02:00"
+    },
+    "weekly_kit": {
+      "day": "MON",
+      "time": "10:00"
+    }
+  },
+  "_help": "Shared defaults. Put machine- and employer-specific settings (project overrides, job roots) in ~/.my-agent-kit/automation.json, which is never committed. projects: overrides by path prefix; a project's own .kit.json wins (keys: gate, auto_tests, test, test_timeout, format, docs_min_files, max_gate_blocks)."
+}

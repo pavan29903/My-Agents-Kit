@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "events": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "script": "guard_bash.py",
+        "timeout": 10
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "script": "secret_guard.py",
+        "timeout": 5
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "script": "context_watch.py",
+        "timeout": 5
+      }
+    ],
+    "PreCompact": [
+      {
+        "script": "context_watch.py",
+        "timeout": 10
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "script": "session_start.py",
+        "timeout": 10
+      }
+    ],
+    "Notification": [
+      {
+        "script": "notify.py",
+        "timeout": 5
+      }
+    ],
+    "Stop": [
+      {
+        "script": "verify_gate.py",
+        "timeout": 600
+      },
+      {
+        "script": "notify.py",
+        "timeout": 5
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "script": "post_edit.py",
+        "timeout": 30
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "sources": {
+    "agents-toolkit": {
+      "url": "https://github.com/prudhvi1709/agents-toolkit.git",
+      "branch": "Main",
+      "license": "MIT",
+      "skills_dir": "skills",
+      "ignore": ["synced"]
+    }
+  }
+}
