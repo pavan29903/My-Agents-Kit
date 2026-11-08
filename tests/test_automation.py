@@ -444,6 +444,19 @@ class JobsTests(unittest.TestCase):
         self.assertTrue(any("to pull" in a for a in info["attention"]))
         self.assertTrue(any(r[2] == "teammate change" for r in info["recent"]))
 
+    def test_sh_never_opens_a_console_window(self):
+        # Regression: scheduled jobs run under pythonw, so each child console got its own visible window.
+        with mock.patch.object(jobs.subprocess, "run", wraps=subprocess.run) as run:
+            rc, _ = jobs.sh(["git", "--version"])
+        self.assertEqual(rc, 0)
+        self.assertEqual(run.call_args.kwargs["creationflags"], getattr(subprocess, "CREATE_NO_WINDOW", 0))
+
+    def test_sh_missing_tool_and_timeout(self):
+        self.assertEqual(jobs.sh(["definitely-not-a-real-tool-xyz"])[0], None)
+        rc, out = jobs.sh([sys.executable, "-c", "import time; time.sleep(5)"], timeout=0.5)
+        self.assertIsNone(rc)
+        self.assertIn("timed out", out)
+
     def test_branch_without_upstream_flagged(self):
         git(self.seed, "checkout", "-q", "-b", "feature")
         info = jobs.repo_status(self.seed, fetch=False, since_hours=24)

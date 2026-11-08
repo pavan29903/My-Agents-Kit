@@ -52,9 +52,14 @@ def sh(cmd: List[str], cwd: Optional[Path] = None, timeout: float = 60,
     exe = shutil.which(cmd[0])
     if exe is None:
         return None, f"{cmd[0]} not installed"
+    # Jobs run under windowless pythonw; without this every git/npm call pops a terminal window.
+    flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    # Nobody is watching a scheduled job: fail instead of opening a GitHub login/account-picker window.
+    full_env = dict(os.environ, GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="never")
+    full_env.update(env or {})
     try:
         proc = subprocess.run([exe] + cmd[1:], cwd=str(cwd) if cwd else None, capture_output=True,
-                              timeout=timeout, env=dict(os.environ, **(env or {})), stdin=subprocess.DEVNULL)
+                              timeout=timeout, env=full_env, stdin=subprocess.DEVNULL, creationflags=flags)
     except subprocess.TimeoutExpired:
         return None, f"timed out after {timeout:.0f}s"
     except OSError as exc:
@@ -64,7 +69,7 @@ def sh(cmd: List[str], cwd: Optional[Path] = None, timeout: float = 60,
 
 
 def git(repo: Path, *args: str, timeout: float = 30) -> Optional[str]:
-    rc, out = sh(["git", *args], cwd=repo, timeout=timeout, env={"GIT_TERMINAL_PROMPT": "0"})
+    rc, out = sh(["git", *args], cwd=repo, timeout=timeout)
     return out if rc == 0 else None
 
 
