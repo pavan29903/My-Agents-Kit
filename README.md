@@ -189,7 +189,7 @@ python -m unittest discover -s tests -v
 .\kit validate
 ```
 
-CI runs both on Windows and Ubuntu with Python 3.9 and 3.12.
+CI runs on Windows (Python 3.9 and 3.12) and Ubuntu (Python 3.12).
 
 Issues and pull requests are welcome.
 
