@@ -1,7 +1,7 @@
 # Automation guide
 
-Two layers of automation, both installed by `kit install` (scheduled jobs need
-one extra command).
+Two layers of automation: the one-message workflow, installed by `kit install`,
+and optional report-only jobs you run when you want (or schedule).
 
 ```
 You type one message
@@ -120,15 +120,20 @@ the repo):
 
 Turn the gate off for one session: start Claude with `KIT_GATE=0` set.
 
-## 2. Scheduled jobs
+## 2. Report jobs (on demand or scheduled)
 
 ```powershell
-kit schedule install      # create the three Windows scheduled tasks
-kit schedule list         # show next run times
-kit schedule remove       # delete them
 kit jobs morning-brief --open   # run any job now
 kit brief                 # print the latest morning brief
+kit schedule install      # optional: create the three Windows scheduled tasks
+kit schedule list         # show next run times
+kit schedule remove       # delete them
 ```
+
+Scheduling is optional. Missed runs start right after the PC boots; jobs run
+without windows and never open login prompts, so a repo that needs an
+interactive login shows `fetch failed` in the brief. Name the account for such
+a repo once: `git config --local credential.username <account>`.
 
 - Tasks live in Task Scheduler under `\my-agent-kit\`, run as you, without
   admin rights, and catch up after the PC was off or asleep at the scheduled
